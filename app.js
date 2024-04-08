@@ -2,6 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
+const carsRouter = require('./routes/carsRouter');
+
 require("dotenv").config();
 
 const app = express();
@@ -9,6 +11,8 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 app.use(morgan("tiny"));
+
+app.use("/api/cars", carsRouter)
 
 // app.use((_, res) => {
 //     res.status(404).json({message: "Route not found"})
