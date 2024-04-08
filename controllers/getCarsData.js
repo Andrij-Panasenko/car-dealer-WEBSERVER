@@ -1,4 +1,4 @@
-const controllerWrapper = requirq("../helpers");
+const controllerWrapper = require("../helpers");
 
 const Car = require("../models/car");
 
