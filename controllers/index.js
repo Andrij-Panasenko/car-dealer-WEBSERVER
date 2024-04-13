@@ -1,3 +1,4 @@
-const getCarsData = require('./getCarsData');
+const getCarsData = require("./getCarsData");
+const getCarBrands = require("./getCarBrands");
 
-module.exports = getCarsData;
+module.exports = { getCarsData, getCarBrands };
