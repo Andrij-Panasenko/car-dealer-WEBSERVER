@@ -1,5 +1,5 @@
 const express = require("express");
-const {getCarsData} = require("../controllers");
+const {getCarsData, getCarBrands} = require("../controllers");
 const cloudCustomersMiddleware = require("../middlewears");
 const carsRouter = express.Router();
 

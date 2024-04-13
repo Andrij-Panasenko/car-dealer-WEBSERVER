@@ -1,4 +1,4 @@
-const controllerWrapper = require("../helpers");
+const {controllerWrapper} = require("../helpers");
 const httpError = require("../helpers");
 const fs = require("fs").promises;
 const path = require("path");
@@ -14,4 +14,4 @@ const getCarBrands = async (req, res) => {
   res.status(200).json(brandList);
 };
 
-module.exports = { getCarBrands: controllerWrapper(getCarBrands) };
+module.exports = controllerWrapper(getCarBrands);

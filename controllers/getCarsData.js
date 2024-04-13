@@ -1,4 +1,5 @@
-const controllerWrapper = require("../helpers");
+// const { controllerWrapper } = require("../helpers");
+const {controllerWrapper } = require("../helpers")
 
 const Car = require("../models/car");
 
@@ -10,6 +11,4 @@ const getCarsData = async (req, res) => {
   res.status(200).json(data);
 };
 
-module.exports = {
-  getCarsData: controllerWrapper(getCarsData),
-};
+module.exports = controllerWrapper(getCarsData);
