@@ -12,7 +12,7 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan("tiny"));
 
-app.use("/api/cars", carsRouter)
+app.use("/api", carsRouter)
 
 app.use((_, res) => {
     res.status(404).json({message: "Route not found"})
