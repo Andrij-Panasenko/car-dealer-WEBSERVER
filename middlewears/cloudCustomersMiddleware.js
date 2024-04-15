@@ -12,11 +12,17 @@ cloudinary.config({
 
 const cloudCustomersMiddleware = async (req, res, next) => {
   try {
-    const resp = await cloudinary.api.resources_by_tag("cars");
 
-    console.log(resp);
+    const resourses = await cloudinary.api.resources({
+      type: "upload",
+      prefix: "cars/",
+      max_results: 100,
+    });
+// console.log(resourses)
 
-    req.cloudinaryResources = resp.resources;
+    // const resp = await cloudinary.api.resources_by_tag("cars");
+
+    req.cloudinaryResources = resourses;
     next();
   } catch (error) {
     console.error("Cloudinary error:", error);
