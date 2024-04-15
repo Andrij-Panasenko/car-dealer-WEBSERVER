@@ -12,15 +12,11 @@ cloudinary.config({
 
 const cloudCustomersMiddleware = async (req, res, next) => {
   try {
-
     const resourses = await cloudinary.api.resources({
       type: "upload",
       prefix: "cars/",
       max_results: 100,
     });
-// console.log(resourses)
-
-    // const resp = await cloudinary.api.resources_by_tag("cars");
 
     req.cloudinaryResources = resourses;
     next();
@@ -29,7 +25,5 @@ const cloudCustomersMiddleware = async (req, res, next) => {
     next(error);
   }
 };
-
-// const storage = new
 
 module.exports = cloudCustomersMiddleware;
