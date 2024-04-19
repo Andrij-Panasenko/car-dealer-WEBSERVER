@@ -1,8 +1,19 @@
 const { Schema, model } = require("mongoose");
 
 const carSchema = Schema({
-    name: String,
-})
+  make: String,
+  model: String,
+  barrels: Number,
+  cylinders: Number,
+  drive: String,
+  eng_descr: Array[String],
+  fueltype: String,
+  id: String,
+  trany: String,
+  vclass: String,
+  year: String,
+  basemodel: String,
+});
 
 const Car = model("car", carSchema)
 
