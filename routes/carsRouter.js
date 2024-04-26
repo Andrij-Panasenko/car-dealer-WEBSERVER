@@ -1,9 +1,9 @@
 const express = require("express");
-const {getCarsData, getCarBrands} = require("../controllers");
-const cloudCustomersMiddleware = require("../middlewears");
+const {getCarsData, getCarBrands, getOurCustomers} = require("../controllers");
 const carsRouter = express.Router();
 
-carsRouter.get("/cars", cloudCustomersMiddleware, getCarsData);
+carsRouter.get("/cars", getCarsData);
 carsRouter.get("/carbrands", getCarBrands)
+carsRouter.get("/customers", getOurCustomers);
 
 module.exports = carsRouter;
