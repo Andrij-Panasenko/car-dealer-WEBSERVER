@@ -6,7 +6,7 @@ const carSchema = Schema({
   barrels: Number,
   cylinders: Number,
   drive: String,
-  eng_descr: Array[String],
+  eng_dscr: String,
   fueltype: String,
   id: String,
   trany: String,
