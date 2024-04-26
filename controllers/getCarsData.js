@@ -7,9 +7,7 @@ const getCarsData = async (req, res) => {
 
   if (!carsInfo) throw httpError("values not found");
 
-  const data = carsInfo.concat(req.cloudinaryResources);
-
-  res.status(200).json(data);
+  res.status(200).json(carsInfo);
 };
 
 module.exports = controllerWrapper(getCarsData);
